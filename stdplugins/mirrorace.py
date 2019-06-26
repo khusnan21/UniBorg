@@ -61,8 +61,8 @@ async def _(event):
         # /* STEP 1: get upload_key */
         step_one_url = "https://mirrorace.com/api/v1/file/upload"
         step_one_auth_params = {
-            "api_key": Config.MIRROR_ACE_API_KEY,
-            "api_token": Config.MIRROR_ACE_API_TOKEN
+            "6b291ae46ff65fe6a5c1ff5faf886921": Config.MIRROR_ACE_API_KEY,
+            "ac5362c89ea67f533b9b2739db28f43e": Config.MIRROR_ACE_API_TOKEN
         }
         async with aiohttp.ClientSession() as session:
             resp = await session.post(step_one_url, data=step_one_auth_params)
@@ -92,8 +92,8 @@ async def _(event):
                     mirrors = default_mirrors
                     chunk_size = int(max_chunk_size)
                     step_two_params = {
-                        "api_key": Config.MIRROR_ACE_API_KEY,
-                        "api_token": Config.MIRROR_ACE_API_TOKEN,
+                        "6b291ae46ff65fe6a5c1ff5faf886921": Config.MIRROR_ACE_API_KEY,
+                        "ac5362c89ea67f533b9b2739db28f43e": Config.MIRROR_ACE_API_TOKEN,
                         "cTracker": cTracker,
                         "upload_key": upload_key,
                         "mirrors[]": mirrors,
